@@ -1,0 +1,153 @@
+/* * {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+} */
+
+body {
+    margin: 0;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 136px calc(100vh - 136px) auto 100px;
+}
+
+nav #links-background {
+    background-color: lightpink;
+    width: 100%;
+	height: calc(100% - 12px);
+    display: flex;
+    flex-direction: row;
+}
+
+nav #logo {
+	height: 80px;
+	width: auto;
+	margin: 30px;
+	display: flex;
+}
+
+nav #logo img {
+	height: 100%;
+}
+
+nav #logo h2 {
+	display: inline;
+	padding: 0px 30px;
+	font-size: 40px;
+	margin: auto;
+}
+
+nav #links {
+	margin: auto;
+	margin-right: 20px;
+	height: min-content;
+}
+
+nav ul {
+	display: inline;
+	list-style: none;
+	padding: 0px;
+	/* margin: 24px 20px 0px auto; */
+}
+
+nav ul li {
+	font-family: "Noto Sans", Helvetica, sans-serif;
+	font-size: 25px;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	color: black;
+	margin-left: 40px;
+}
+
+nav .accent-line {
+	background-color: yellow;
+	height: 12px;
+}
+
+header {
+	background-color: lightblue;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+header h1 {
+	font-size: 200px;
+	margin: auto;
+	margin-bottom: 0;
+}
+
+header h3 {
+	font-size: 150px;
+	margin: auto;
+	margin-top: 0;
+}
+
+main {
+	background-color: blanchedalmond;
+	display: flex;
+	flex-direction: row;
+}
+
+main section {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+main #left {
+	width: 700px;
+}
+
+main #right {
+	width: 520px;
+}
+
+main img {
+	border-radius: 35px;
+	border: 11px solid brown;
+	margin-top: 50px;
+}
+
+main img:last-child {
+	margin-bottom: 50px;
+}
+
+.image {
+	height: 170px;
+	width: 100%;
+	background-image: url(../images/image_placeholder.png);
+	background-size: contain;
+	margin-top: 50px;
+}
+
+main #left p {
+	margin-top: 50px;
+	font-size: 18px;
+}
+
+main #left .image:last-child {
+	height: 400px;
+}
+
+footer {
+	background-color: lightgreen;
+	display: flex;
+	flex-direction: row;
+}
+
+footer * {
+	margin: auto;
+}
+
+#links {
+	display: flex;
+	flex-direction: row;
+}
+
+#links * {
+	margin: 10px;
+}
