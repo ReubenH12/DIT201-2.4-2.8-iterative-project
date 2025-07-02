@@ -1,10 +1,5 @@
-/* * {
-	box-sizing: border-box;
-	scroll-behavior: smooth;
-} */
-
-body {
-    margin: 0;
+* {
+    margin: 0; /* Defaults the margin to 0 for easier styling */
 }
 
 .grid-container {
@@ -49,7 +44,6 @@ nav ul {
 	display: inline;
 	list-style: none;
 	padding: 0px;
-	/* margin: 24px 20px 0px auto; */
 }
 
 nav ul li {
@@ -90,64 +84,60 @@ main {
 	background-color: blanchedalmond;
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
+	border-top: 18px solid lightpink;
+	gap: 150px;
+	padding: 140px;
 }
 
 main section {
-	margin: auto;
 	display: flex;
 	flex-direction: column;
 }
 
-main #left {
+main section#left {
 	width: 700px;
-}
-
-main #right {
-	width: 520px;
-}
-
-main img {
-	border-radius: 35px;
-	border: 11px solid brown;
-	margin-top: 50px;
-}
-
-main img:last-child {
-	margin-bottom: 50px;
-}
-
-.image {
-	height: 170px;
-	width: 100%;
-	background-image: url(../images/image_placeholder.png);
-	background-size: contain;
-	margin-top: 50px;
-}
-
-main #left p {
-	margin-top: 50px;
+	gap: 110px;
 	font-size: 18px;
 }
 
-main #left .image:last-child {
-	height: 400px;
+main section#right {
+	width: 520px;
+	gap: 130px;
+}
+
+#right .image {
+	border-radius: 35px;
+	border: 11px solid brown;
+	flex-grow: 1;
+}
+
+.image {
+	width: 100%;
+	background-image: url(../images/image_placeholder.png);
+	background-size: cover;
+	background-position: center;
+}
+
+#left .image {
+	height: 300px;
 }
 
 footer {
 	background-color: lightgreen;
 	display: flex;
 	flex-direction: row;
-}
-
-footer * {
-	margin: auto;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
 }
 
 #links {
 	display: flex;
 	flex-direction: row;
+	gap: 20px;
 }
 
-#links * {
-	margin: 10px;
+#footer-logo {
+	width: 304px; /* Sets the width to be the same as the links div for proper spacing */
 }
