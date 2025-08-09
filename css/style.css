@@ -1,26 +1,47 @@
-* {
-    margin: 0; /* Defaults the margin to 0 for easier styling */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+	--yellow: #FFCF00;
+	--brown: #460408;
+	--blue: #000047;
 }
 
-.grid-container {
+* {
+    margin: 0; /* Defaults the margin to 0 for easier styling */
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+}
+
+#grid-container {
 	display: grid;
-	grid-template-columns: auto;
+	grid-template-columns: 100%;
+}
+
+#home #grid-container {
 	grid-template-rows: 136px calc(100vh - 136px) auto 100px;
 }
 
+.activity #grid-container {
+	grid-template-rows: 136px auto 100px;
+}
+
 nav #links-background {
-    background-color: lightpink;
+    background-color: var(--blue);
     width: 100%;
 	height: calc(100% - 12px);
     display: flex;
     flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px;
 }
 
 nav #logo {
-	height: 80px;
+	height: 76px;
 	width: auto;
-	margin: 30px;
 	display: flex;
+	gap: 30px;
 }
 
 nav #logo img {
@@ -32,84 +53,107 @@ nav #logo h2 {
 	padding: 0px 30px;
 	font-size: 40px;
 	margin: auto;
+	color: white;
 }
 
 nav #links {
-	margin: auto;
-	margin-right: 20px;
 	height: min-content;
+	display: flex;
+	gap: 55px;
 }
 
 nav ul {
-	display: inline;
 	list-style: none;
-	padding: 0px;
 }
 
 nav ul li {
-	font-family: "Noto Sans", Helvetica, sans-serif;
 	font-size: 25px;
-	display: inline-block;
-	position: relative;
-	cursor: pointer;
-	color: black;
-	margin-left: 40px;
+	color: white;
+	font-weight: 400;
+}
+
+nav a {
+	text-decoration: none;
 }
 
 nav .accent-line {
-	background-color: yellow;
+	background-color: var(--yellow);
 	height: 12px;
 }
 
-header {
+#home header {
 	background-color: lightblue;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
-header h1 {
+#home header h1 {
 	font-size: 200px;
 	margin: auto;
 	margin-bottom: 0;
 }
 
-header h3 {
+#home header h3 {
 	font-size: 150px;
 	margin: auto;
 	margin-top: 0;
 }
 
-main {
-	background-color: blanchedalmond;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	border-top: 18px solid lightpink;
-	gap: 150px;
-	padding: 140px;
+.activity .activity-header {
+	background-color: var(--blue);
+	border: 12px solid var(--yellow);
+	border-radius: 60px;
+	padding: 63px 0;
+	text-align: center;
+	width: 1370px;
 }
 
-main section {
+.activity .activity-header h1 {
+	color: white;
+	font-size: 100px;
+	font-weight: 600;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 140px;
+	padding: 140px 0;
+}
+
+#home main {
+	border-top: 18px solid var(--blue);
+}
+
+article {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 120px;
+}
+
+article section {
 	display: flex;
 	flex-direction: column;
 }
 
-main section#left {
+article section#left {
 	width: 700px;
 	gap: 110px;
 	font-size: 18px;
 }
 
-main section#right {
+article section#right {
 	width: 520px;
 	gap: 130px;
 }
 
-#right .image {
-	border-radius: 35px;
-	border: 11px solid brown;
-	flex-grow: 1;
+.row-content {
+	display: flex;
+	flex-direction: row;
+	gap: 150px;
 }
 
 .image {
@@ -119,17 +163,225 @@ main section#right {
 	background-position: center;
 }
 
+/* This covers all the divs that need the same border radius. Doing it this way makes it easy to change the radius all at once */
+article section > div, article > #row-content > div, #form-box, #contact-details {
+	border-radius: 35px;
+}
+
+.koru-background {
+	background-color: #460408;
+	position: relative;
+	background-size: cover;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.semi-bold {
+	font-weight: 600;
+}
+
+#group-links {
+	padding: 27px;
+}
+
+#group-links .content {
+	position: relative;
+}
+
+#group-links p {
+	color: white;
+	font-size: 16px;
+}
+
+#group-links #buttons {
+	margin-top: 27px;
+	display: flex;
+	justify-content: space-between;
+}
+
+#group-links .group-button {
+	border-radius: 43px;
+	background-color: yellow;
+	width: 118px;
+	height: 45px;
+}
+
+#group-links a {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	text-align: center;
+	align-content: center;
+	text-decoration: none;
+	color: initial;
+}
+
+#meeting-time-location {
+	display: flex;
+	flex-direction: column;
+	color: white;
+	padding: 46px;
+	gap: 45px;
+	text-align: center;
+}
+
+#meeting-time-location #symbols {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 105px;
+}
+
+#meeting-time-location h5 {
+	font-size: 30px;
+	font-weight: 500;
+}
+
+#meeting-time-location p {
+	font-size: 21px;
+}
+
+#meeting-time-location .symbol {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 22px;
+}
+
+#meeting-time-location svg {
+	width: 80px;
+	height: 80px;
+	fill: none;
+	stroke: white;
+	stroke-width: 2px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+#wainui-preview {
+	background-image: url(../images/image_placeholder.png);
+	background-position: center;
+	background-size: cover;
+	height: 259px;
+	padding-top: 39px;
+}
+
+#wainui-preview h4 {
+	font-weight: bold;
+	font-size: 42px;
+	text-align: center;
+}
+
+.paragraph {
+	display: flex;
+	flex-direction: column;
+	gap: 34px;
+}
+
+.paragraph h3 {
+	font-size: 49px;
+	font-weight: 600;
+}
+
+.image {
+	border: 11px solid var(--brown);
+	border-radius: 35px;
+}
+
 #left .image {
-	height: 300px;
+	height: 350px;
+}
+
+#right .image {
+	flex-grow: 1;
+}
+
+#contact main {
+	flex-direction: column;
+	align-items: center;
+}
+
+#contact-details {
+	display: flex;
+	flex-direction: column;
+	color: white;
+	padding: 50px 46px;
+	gap: 57px;
+	width: 700px;
+}
+
+#contact-details p {
+	font-size: 30px;
+	font-weight: 500;
+}
+
+#contact-details .detail {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 39px;
+}
+
+#contact-details svg {
+	width: 80px;
+	height: 80px;
+	fill: none;
+	stroke: white;
+	stroke-width: 2px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+#contact .image {
+	width: 520px;
+}
+
+#form-box {
+	width: 1370px;
+	padding: 50px;
+}
+
+#form-box p {
+	color: white;
+	font-size: 24px;
+}
+
+#form-box #form-button {
+	display: flex;
+	border-radius: 75px;
+	background-color: yellow;
+	width: 100%;
+	height: 110px;
+	margin-top: 50px;
+	align-items: center;
+	justify-content: center;
+}
+
+#form-box a {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	text-align: center;
+	align-content: center;
+	text-decoration: underline;
+	color: initial;
+	font-size: 30px;
+	font-weight: 600;
 }
 
 footer {
-	background-color: lightgreen;
+	background-color: var(--blue);
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px;
+}
+
+footer p {
+	color: white;
 }
 
 #links {
@@ -139,5 +391,5 @@ footer {
 }
 
 #footer-logo {
-	width: 304px; /* Sets the width to be the same as the links div for proper spacing */
+	width: 284.3px; /* Sets the width to be the same as the links div for proper spacing */
 }
