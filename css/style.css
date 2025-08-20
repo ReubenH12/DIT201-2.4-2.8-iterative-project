@@ -70,10 +70,20 @@ nav ul li {
 	font-size: 25px;
 	color: white;
 	font-weight: 400;
+	width: auto;
 }
 
 nav a {
 	text-decoration: none;
+}
+
+nav #page-indicator {
+	position: absolute;
+	height: 5px;
+	background-color: white;
+	margin-top: 7px;
+	/* border-radius: 3px; */
+	translate: -10px; /* 10px is half of the 20px that the JavaScript extends the line by past the width of the container. This centres the line. */
 }
 
 nav .accent-line {
@@ -203,7 +213,7 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 
 #group-links .group-button {
 	border-radius: 43px;
-	background-color: yellow;
+	background-color: var(--yellow);
 	width: 118px;
 	height: 45px;
 }
@@ -269,8 +279,8 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 }
 
 #wainui-preview h4 {
-	font-weight: bold;
-	font-size: 42px;
+	font-weight: 750;
+	font-size: 44px;
 	text-align: center;
 }
 
@@ -351,7 +361,7 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 #form-box #form-button {
 	display: flex;
 	border-radius: 75px;
-	background-color: yellow;
+	background-color: var(--yellow);
 	width: 100%;
 	height: 110px;
 	margin-top: 50px;
