@@ -11,6 +11,7 @@
 	box-sizing: border-box;
 	font-family: "Inter", sans-serif;
 	font-optical-sizing: auto;
+	scroll-behavior: smooth;
 }
 
 #grid-container {
@@ -19,7 +20,7 @@
 }
 
 #home #grid-container {
-	grid-template-rows: 136px calc(100vh - 136px) auto 100px;
+	grid-template-rows: 136px calc(100vh - 136px) auto auto;
 }
 
 .activity #grid-container {
@@ -41,7 +42,8 @@ nav #logo {
 	height: 76px;
 	width: auto;
 	display: flex;
-	gap: 30px;
+	align-items: center;
+	gap: 40px;
 }
 
 nav #logo img {
@@ -50,13 +52,11 @@ nav #logo img {
 
 nav #logo h2 {
 	display: inline;
-	padding: 0px 30px;
 	font-size: 40px;
-	margin: auto;
 	color: white;
 }
 
-nav #links {
+nav #page-links {
 	height: min-content;
 	display: flex;
 	gap: 55px;
@@ -82,8 +82,6 @@ nav #page-indicator {
 	height: 5px;
 	background-color: white;
 	margin-top: 7px;
-	/* border-radius: 3px; */
-	translate: -10px; /* 10px is half of the 20px that the JavaScript extends the line by past the width of the container. This centres the line. */
 }
 
 nav .accent-line {
@@ -92,7 +90,9 @@ nav .accent-line {
 }
 
 #home header {
-	background-color: lightblue;
+	background-image: url(../images/wainui_5.jpg);
+	background-position: center;
+	background-size: cover;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -100,14 +100,14 @@ nav .accent-line {
 
 #home header h1 {
 	font-size: 200px;
-	margin: auto;
-	margin-bottom: 0;
+	margin: auto auto 0;
+	color: white;
 }
 
 #home header h3 {
 	font-size: 150px;
-	margin: auto;
-	margin-top: 0;
+	margin: 0 auto auto;
+	color: white;
 }
 
 .activity .activity-header {
@@ -140,7 +140,6 @@ main {
 article {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	gap: 120px;
 }
 
@@ -168,7 +167,6 @@ article section#right {
 
 .image {
 	width: 100%;
-	background-image: url(../images/image_placeholder.png);
 	background-size: cover;
 	background-position: center;
 }
@@ -181,7 +179,24 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 .koru-background {
 	background-color: #460408;
 	position: relative;
+}
+
+.koru-background::before {
+	content: '';
+	background-image: url(../images/koru_background.jpg);
+	opacity: 0.05;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
 	background-size: cover;
+	background-position: center;
+	border-radius: inherit;
+}
+
+.koru-background > * {
+	position: relative;
 }
 
 .bold {
@@ -194,10 +209,6 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 
 #group-links {
 	padding: 27px;
-}
-
-#group-links .content {
-	position: relative;
 }
 
 #group-links p {
@@ -216,6 +227,11 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	background-color: var(--yellow);
 	width: 118px;
 	height: 45px;
+	transition-duration: 100ms;
+}
+
+#group-links .group-button:hover {
+	scale: 1.03;
 }
 
 #group-links a {
@@ -271,17 +287,30 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 }
 
 #wainui-preview {
-	background-image: url(../images/image_placeholder.png);
+	background-image: url(../images/wainui_8.jpg);
 	background-position: center;
 	background-size: cover;
 	height: 259px;
-	padding-top: 39px;
+	transition-duration: 200ms;
+}
+
+#wainui-preview:hover {
+	scale: 1.03;
+}
+
+#wainui-preview a {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	text-decoration: none;
 }
 
 #wainui-preview h4 {
 	font-weight: 750;
 	font-size: 44px;
 	text-align: center;
+	margin-top: 39px;
+	color: white;
 }
 
 .paragraph {
@@ -308,11 +337,6 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	flex-grow: 1;
 }
 
-#contact main {
-	flex-direction: column;
-	align-items: center;
-}
-
 #contact-details {
 	display: flex;
 	flex-direction: column;
@@ -332,6 +356,7 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	flex-direction: row;
 	align-items: center;
 	gap: 39px;
+	position: relative;
 }
 
 #contact-details svg {
@@ -387,19 +412,42 @@ footer {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px;
+	padding: 30px 40px;
 }
 
 footer p {
 	color: white;
+	font-size: 20px;
 }
 
-#links {
+footer #footer-logo {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+footer #footer-logo img {
+	height: 48px;
+}
+
+footer #external-links {
 	display: flex;
 	flex-direction: row;
-	gap: 20px;
+	gap: 37px;
 }
 
-#footer-logo {
-	width: 284.3px; /* Sets the width to be the same as the links div for proper spacing */
+footer a {
+	display: flex;
+	gap: 12px;
+	color: white;
+}
+
+footer #external-links svg {
+	width: 24px;
+	height: 24px;
+	fill: none;
+	stroke: white;
+	stroke-width: 2px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
 }
