@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* These variabels mean I don't have to write my colour hex codes in in every instance, saving me time */
 :root {
 	--yellow: #FFCF00;
 	--brown: #460408;
 	--blue: #000047;
 }
 
+/* Some properties are useful to just apply to every element by default */
 * {
     margin: 0; /* Defaults the margin to 0 for easier styling */
 	box-sizing: border-box;
@@ -14,11 +16,16 @@
 	scroll-behavior: smooth;
 }
 
+body {
+	overflow-x: hidden;
+}
+
 #grid-container {
 	display: grid;
 	grid-template-columns: 100%;
 }
 
+/* The calc(100vh - 136px) makes sure the height of the header and therefore the hero image is exactly the same height as the screen */
 #home #grid-container {
 	grid-template-rows: 136px calc(100vh - 136px) auto auto;
 }
@@ -59,7 +66,6 @@ nav #logo h2 {
 nav #page-links {
 	height: min-content;
 	display: flex;
-	gap: 55px;
 }
 
 nav ul {
@@ -71,6 +77,8 @@ nav ul li {
 	color: white;
 	font-weight: 400;
 	width: auto;
+	padding-left: 27px;
+	padding-right: 28px;
 }
 
 nav a {
@@ -89,11 +97,20 @@ nav .accent-line {
 	height: 12px;
 }
 
-#home header {
+/* The background image needed its own div, so that I could apply the filter property without it affecting the text within */
+#home header .background {
 	background-image: url(../images/wainui_5.jpg);
 	background-position: center;
 	background-size: cover;
-	height: 100%;
+	height: calc(100vh - 136px);
+	width: 100%;
+	z-index: -1;
+	position: absolute;
+	filter: blur(4px) brightness(0.8);
+	scale: 1.013;
+}
+
+#home header {
 	display: flex;
 	flex-direction: column;
 }
@@ -123,6 +140,56 @@ nav .accent-line {
 	color: white;
 	font-size: 100px;
 	font-weight: 600;
+}
+
+#scroll-nudge {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 25px;
+}
+
+#nudge-text {
+	color: white;
+	display: none;
+	animation: fade 200ms;
+	font-size: 15px
+}
+
+/* Using keyframes for this animation provides more flexibility; it wouldn't work with the transition property */
+@keyframes fade {
+	from {
+		opacity: 0.1;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Like all the SVGs on the website, the SVG properties are applied in the CSS instead of inline, for easier changing */
+#arrow {
+	position: absolute;
+	fill: none;
+	stroke: white;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 400px;
+	height: 20px;
+	width: 40px;
+	bottom: 25px;
+	transition-duration: 200ms;
+}
+
+#scroll-nudge:hover #nudge-text {
+	display: block;
+}
+
+#scroll-nudge:hover #arrow {
+	bottom: 20px;
 }
 
 main {
@@ -181,6 +248,7 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	position: relative;
 }
 
+/* Using the pseudo-element ::before, I can modify the opacity of the koru pattern and put it in front of the brown but behind the text, all without making another element */
 .koru-background::before {
 	content: '';
 	background-image: url(../images/koru_background.jpg);
@@ -199,6 +267,7 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	position: relative;
 }
 
+/* Using classes for this means I can quickly add class="bold" or class="semi-bold" to text that needs it, rather than manaully writing the font weight in CSS everywhere text like that appears */
 .bold {
 	font-weight: 700;
 }
@@ -292,6 +361,7 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	background-size: cover;
 	height: 259px;
 	transition-duration: 200ms;
+	border: 7px solid var(--brown);
 }
 
 #wainui-preview:hover {
@@ -319,6 +389,7 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	gap: 34px;
 }
 
+/* Sometimes, it is easier to put the font weight in here instead of using a semi-bold class, so I've done that here */
 .paragraph h3 {
 	font-size: 49px;
 	font-weight: 600;
