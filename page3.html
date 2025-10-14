@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Meta tags to help search engine SEO -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="Keywords" content="EOTC Week, Tawa College, Camp">
         <meta name="Author" content="Reuben Humphrey">
-        <title>Tawa College EOTC Week - Wainuiomata Camp</title>
+        <title>Tawa College EOTC Week - Outdoor Activities</title>
         <link rel="icon" href="images/logo.png">
         <link rel="stylesheet" href="css/style.css">
-        <script src="js/script.js" defer></script>
+        <script src="js/script.js" defer></script> <!-- The "defer" attribute stops the JavaScript from loading until the entire HTML has loaded, which prevents issues with things firing too early. -->
     </head>
+    <!-- The ID in the body lets the JavaScript know what page it's on -->
     <body id="outdoor" class="activity">
+        <!-- The whole website is contained in a wrapper with display: grid; to lay out the website -->
         <div id="grid-container">
 
+            <!-- The nav section is at the top of each page and contains a logo and links. Using the semantic tag aligns with best practices for HTML5 -->
             <nav>
                 <div id="links-background">
                     <a href="index.html">
@@ -21,38 +25,66 @@
                             <h2>EOTC Week</h2>
                         </div>
                     </a>
-                    <ul id="page-links">
-                        <a href="index.html">
-                            <li><p>Home</p></li>
-                        </a>
-                        <a href="page2.html">
-                            <li><p>Wainuiomata Camp</p></li>
-                        </a>
-                        <a href="page3.html">
-                            <li><p>Outdoor Activities</p></li>
-                        </a>
-                        <a href="page4.html">
-                            <li><p>Community Service</p></li>
-                        </a>
-                        <a href="page5.html">
-                            <li><p>Contact</p></li>
-                        </a>
-                    </ul>
+
+                    <!-- This div for the hamburger menu when the screen is small enough -->
+                    <div id="hamburger">
+                        <div id="bar1" class="bar"></div>
+                        <div id="bar2" class="bar"></div>
+                        <div id="bar3" class="bar"></div>
+                    </div>
+
+                    <!-- This div is for the links to other pages. On small screens, it is hidden until opened. -->
+                    <div id="menu">
+                        <p>Menu</p>
+                        <ul id="page-links">
+                            <li>
+                                <a href="index.html">
+                                    <p>Home</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="page2.html">
+                                    <p>Wainuiomata Camp</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="page3.html">
+                                    <p>Outdoor Activities</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="page4.html">
+                                    <p>Community Service</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="page5.html">
+                                    <p>Contact</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="accent-line"></div>
             </nav>
 
+            <!-- The main section is beneath the header and houses the content. Once again I have used semantic tags as best practice. -->
             <main>
+                <!-- This article is the first of two activities -->
                 <article>
                     <div class="activity-header">
                         <h1>Adrenalin Forest and Te Rauparaha Pool</h1>
                     </div>
+                    <!-- This wrapper div just just makes the two columns of the page display next to each other-->
                     <div class="row-content">
-                        <section id="left">
+                        <!-- This section is the text column -->
+                        <section class="left">
 
-                            <div id="meeting-time-location" class="koru-background">
-                                <div id="symbols">
+                            <!-- This is the brown box with meeting time and location details -->
+                            <div class="meeting-time-location koru-background">
+                                <div class="symbols">
                                     <div class="symbol">
+                                        <!-- Like all the SVGs in the website, this one is inline which makes it easier to manage and style with CSS -->
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                             <circle cx="12" cy="12" r="10"></circle>
                                             <polyline points="12 6 12 12 16 14"></polyline>
@@ -70,6 +102,9 @@
                                 <p>Underneath the pedestrian overbridge at the train station.</p>
                             </div>
 
+                            <!-- This image, like the others in this section, only shows on phones (Test 33). The data-src attribute is explained in the W2T3 diary entry. -->
+                            <div data-src="outdoor_2" class="image"></div>
+
                             <div class="paragraph">
                                 <h3>What to bring</h3>
                                 <p>
@@ -78,6 +113,8 @@
                                     medication required.
                                 </p>
                             </div>
+
+                            <div data-src="outdoor_1" class="image"></div>
 
                             <div class="paragraph">
                                 <h3>What's happening</h3>
@@ -107,22 +144,29 @@
                                     where they will be dismissed.
                                 </p>
                             </div>
+
+                            <div data-src="outdoor_3" class="image"></div>
+
                         </section>
-                        <section id="right">
+                        <!-- This right section is the images, and only shows on desktop -->
+                        <section class="right">
                             <div data-src="outdoor_1" class="image"></div>
                             <div data-src="outdoor_2" class="image"></div>
                             <div data-src="outdoor_3" class="image"></div>
                         </section>
+                    </div>
                 </article>
+
+                <!-- This is the second article, for the second activity on this page -->
                 <article>
                     <div class="activity-header">
                         <h1>Rangituhi Walk</h1>
                     </div>
                     <div class="row-content">
-                        <section id="left">
+                        <section class="left">
 
-                            <div id="meeting-time-location" class="koru-background">
-                                <div id="symbols">
+                            <div class="meeting-time-location koru-background">
+                                <div class="symbols">
                                     <div class="symbol">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                             <circle cx="12" cy="12" r="10"></circle>
@@ -140,6 +184,8 @@
                                 </div>
                             </div>
 
+                            <div data-src="outdoor_4" class="image"></div>
+
                             <div class="paragraph">
                                 <h3>What's happening</h3>
                                 <p>
@@ -147,10 +193,12 @@
                                 </p>
                             </div>
 
-                            <div data-src="outdoor_6" class="image"></div>
+                            <!-- This perm-img stays on both mobile and desktop -->
+                            <div data-src="outdoor_6" class="image perm-img"></div>
+                            <div data-src="outdoor_5" class="image"></div>
 
                         </section>
-                        <section id="right">
+                        <section class="right">
                             <div data-src="outdoor_4" class="image"></div>
                             <div data-src="outdoor_5" class="image"></div>
                         </section>
@@ -158,12 +206,17 @@
                 </article>
             </main>
 
+            <!-- This is the footer of the website, that is the same on all pages, containing copyright and some external links -->
             <footer>
-                <div id="footer-logo">
+                <a id="footer-logo" href="index.html">
                     <img src="images/TC_logo.png" alt="">
-                    <p>Tawa College EOTC Week</p>
+                    <!-- The &nbsp; (non-breaking space) character here means the footer resizes responsively without cutting words in awkward places -->
+                    <p>Tawa&nbsp;College EOTC&nbsp;Week</p>
+                </a>
+                <div id="attribution">
+                    <p>&copy; Reuben Humphrey 2025</p>
+                    <p>Text supplied by Tawa College</p>
                 </div>
-                <p>&copy; Reuben Humphrey 2025</p>
                 <div id="external-links">
                     <a href="https://www.tawacollege.school.nz/">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
