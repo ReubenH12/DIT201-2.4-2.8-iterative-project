@@ -2,7 +2,7 @@
 const pageNames = {
     "Home": "home",
     "Wainuiomata Camp": "wainui",
-    "Outdoor Activities": "outdoor",
+    "Adrenalin Forest and Pool": "forestpool",
     "Community Service": "community",
     "Contact": "contact"
 }
@@ -30,16 +30,16 @@ hamburgerButton.addEventListener("click", function() {
 
 // This section makes the indicator line underneath the menu items in the navigation
 
-// Define the list of <a> navigation elements and the name of the current page
-let navButtons = document.querySelectorAll("nav ul li a");
+// Define the list of <li> navigation elements and the name of the current page
+let navButtons = document.querySelectorAll("nav ul li");
 let currentPage = document.querySelector("body").id;
-// Also define the <a> of the current page as a global variable here
+// Also define the <li> of the current page as a global variable here
 let currentButton;
 
-// Check through the <a> elements until one of them matches the current page
+// Check through the <li> elements until one of them matches the current page
 for (let i = 0; i < navButtons.length; i++) {
     if (pageNames[navButtons[i].children[0].innerHTML] == currentPage) {
-        // Re-set current button to this <a>
+        // Re-set current button to this <li>
         currentButton = navButtons[i];
     }
 }
@@ -104,9 +104,9 @@ document.fonts.ready.then(() => {
 
 
 
-// This section manages the movement of the indicator line upon hover on the other navigation items. It only runs if the normal, horizontal nav exisits (on desktops), as it would be useless on phones with the vertical nav menu. 
+// This section manages the movement of the indicator line upon hover on the other navigation items. It only runs if the device supports hovering (i.e. has a mouse rather than touch), which means it is disabled on phones. 
 
-if (window.innerWidth > 1200) {
+if (window.matchMedia("(pointer: fine)").matches) {
 
     // The entire section is only run when the fonts load, as that changes some widths and alignments.
     document.fonts.ready.then(() => {
@@ -138,6 +138,10 @@ if (window.innerWidth > 1200) {
             // Add an event listener to animate the line with the above parameters upon hover on the nav item. While we generally work with the paragraph element inside the li, this time it needs to be the li, as the user should be able to hover over the entire width of the element. 
             menuItem.parentElement.addEventListener("mouseenter", function() {
                 pageIndicator.animate(enterFrames, options);
+                // console.log("Run mouseenter")
+                // console.log(menuItem)
+                // console.log(`${menuItemRect.x} - ${lineRect.x} - ${defaultLineExtension/2} = ${offsetX}`)
+                // console.log(enterFrames)
             });
 
 

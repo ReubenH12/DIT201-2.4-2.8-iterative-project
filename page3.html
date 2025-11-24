@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Meta tags to help search engine SEO -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="Keywords" content="EOTC Week, Tawa College, Camp">
         <meta name="Author" content="Reuben Humphrey">
-        <title>Tawa College EOTC Week - Outdoor Activities</title>
+        <title>Tawa College EOTC Week - Wainuiomata Camp</title>
         <link rel="icon" href="images/logo.png">
         <link rel="stylesheet" href="css/style.css">
-        <script src="js/script.js" defer></script> <!-- The "defer" attribute stops the JavaScript from loading until the entire HTML has loaded, which prevents issues with things firing too early. -->
+        <script src="js/script.js" defer></script>
     </head>
-    <!-- The ID in the body lets the JavaScript know what page it's on -->
-    <body id="outdoor" class="activity">
-        <!-- The whole website is contained in a wrapper with display: grid; to lay out the website -->
+    <body id="forestpool" class="activity">
         <div id="grid-container">
 
-            <!-- The nav section is at the top of each page and contains a logo and links. Using the semantic tag aligns with best practices for HTML5 -->
             <nav>
                 <div id="links-background">
                     <a href="index.html">
@@ -26,147 +22,46 @@
                         </div>
                     </a>
 
-                    <!-- This div for the hamburger menu when the screen is small enough -->
                     <div id="hamburger">
                         <div id="bar1" class="bar"></div>
                         <div id="bar2" class="bar"></div>
                         <div id="bar3" class="bar"></div>
                     </div>
 
-                    <!-- This div is for the links to other pages. On small screens, it is hidden until opened. -->
                     <div id="menu">
                         <p>Menu</p>
                         <ul id="page-links">
-                            <li>
-                                <a href="index.html">
-                                    <p>Home</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="page2.html">
-                                    <p>Wainuiomata Camp</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="page3.html">
-                                    <p>Outdoor Activities</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="page4.html">
-                                    <p>Community Service</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="page5.html">
-                                    <p>Contact</p>
-                                </a>
-                            </li>
+                            <a href="index.html">
+                                <li><p>Home</p></li>
+                            </a>
+                            <a href="page2.html">
+                                <li><p>Wainuiomata Camp</p></li>
+                            </a>
+                            <a href="page3.html">
+                                <li><p>Adrenalin Forest and Pool</p></li>
+                            </a>
+                            <a href="page4.html">
+                                <li><p>Community Service</p></li>
+                            </a>
+                            <a href="page5.html">
+                                <li><p>Contact</p></li>
+                            </a>
                         </ul>
                     </div>
                 </div>
                 <div class="accent-line"></div>
             </nav>
 
-            <!-- The main section is beneath the header and houses the content. Once again I have used semantic tags as best practice. -->
             <main>
-                <!-- This article is the first of two activities -->
                 <article>
                     <div class="activity-header">
                         <h1>Adrenalin Forest and Te Rauparaha Pool</h1>
                     </div>
-                    <!-- This wrapper div just just makes the two columns of the page display next to each other-->
                     <div class="row-content">
-                        <!-- This section is the text column -->
-                        <section class="left">
+                        <section id="left">
 
-                            <!-- This is the brown box with meeting time and location details -->
-                            <div class="meeting-time-location koru-background">
-                                <div class="symbols">
-                                    <div class="symbol">
-                                        <!-- Like all the SVGs in the website, this one is inline which makes it easier to manage and style with CSS -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <polyline points="12 6 12 12 16 14"></polyline>
-                                        </svg>
-                                        <h5>8:15 am</h5>
-                                    </div>
-                                    <div class="symbol">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                            <circle cx="12" cy="10" r="3"></circle>
-                                        </svg>
-                                        <h5>Tawa Station</h5>
-                                    </div>
-                                </div>
-                                <p>Underneath the pedestrian overbridge at the train station.</p>
-                            </div>
-
-                            <!-- This image, like the others in this section, only shows on phones (Test 33). The data-src attribute is explained in the W2T3 diary entry. -->
-                            <div data-src="outdoor_2" class="image"></div>
-
-                            <div class="paragraph">
-                                <h3>What to bring</h3>
-                                <p>
-                                    A day pack with your lunch, water bottle, sun hat, a warm jumper and rain jacket if the weather forecast
-                                    is bad, togs and a towel. Please wear appropriate sports clothes for climbing. No denim please! Any
-                                    medication required.
-                                </p>
-                            </div>
-
-                            <div data-src="outdoor_1" class="image"></div>
-
-                            <div class="paragraph">
-                                <h3>What's happening</h3>
-                                <p>
-                                    Students will meet at Tawa train station, where the roll will be taken. Please gather with your form
-                                    class for the roll and if you are running late, you must find a teacher and let them know you have
-                                    arrived. Students will catch the 8:28am train to Porirua and then walk as a group to Adrenalin Forest.
-                                    We need to catch this earlier train to ensure we start climbing on time. If students absolutely cannot
-                                    make this train (as I realise that it is before the start of school time) there will be one teacher
-                                    waiting at the train station for any late students and they will catch the 8.48am train. This is an
-                                    absolute backup and is only an option for those that cannot possibly make it earlier. These students
-                                    will be late for the start of the climbing and will not get their full 3 hours.
-                                    <br><br>
-                                    If your whānau lives in Porirua and students will meet us at Adrenalin Forest, please wait at the
-                                    entrance to Adrenalin Forest and let a teacher know when the group gets there so we can update the roll
-                                    and let the school know you are in our care.
-                                    <br><br>
-                                    After a safety briefing, students have 3 hours to climb and test yourselves. After having some lunch we
-                                    will leave Adrenalin Forest and walk to Te Rauparaha Arena, where students have use of the whole of the
-                                    main pool, spas, sauna, steam room, hydroslide and deep water swimming lane. If students are not
-                                    swimming, there is an outside area off the side of the main pool where they can relax.
-                                    <br><br>
-                                    If you indicated on the permission form that your child can leave by themselves directly from the pool
-                                    as they live in the local area, they will be dismissed from here at around 2:15pm.
-                                    <br><br>
-                                    The rest of the group will walk back to Porirua station and catch the 2:39pm train back to Tawa Station,
-                                    where they will be dismissed.
-                                </p>
-                            </div>
-
-                            <div data-src="outdoor_3" class="image"></div>
-
-                        </section>
-                        <!-- This right section is the images, and only shows on desktop -->
-                        <section class="right">
-                            <div data-src="outdoor_1" class="image"></div>
-                            <div data-src="outdoor_2" class="image"></div>
-                            <div data-src="outdoor_3" class="image"></div>
-                        </section>
-                    </div>
-                </article>
-
-                <!-- This is the second article, for the second activity on this page -->
-                <article>
-                    <div class="activity-header">
-                        <h1>Rangituhi Walk</h1>
-                    </div>
-                    <div class="row-content">
-                        <section class="left">
-
-                            <div class="meeting-time-location koru-background">
-                                <div class="symbols">
+                            <div id="meeting-time-location" class="koru-background">
+                                <div id="symbols">
                                     <div class="symbol">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                             <circle cx="12" cy="12" r="10"></circle>
@@ -179,43 +74,61 @@
                                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                             <circle cx="12" cy="10" r="3"></circle>
                                         </svg>
-                                        <h5>School Hall</h5>
+                                        <h5>Tawa Station</h5>
                                     </div>
                                 </div>
+                                <p>Underneath the pedestrian overbridge at the train station.</p>
                             </div>
 
-                            <div data-src="outdoor_4" class="image"></div>
+                            <div data-src="outdoor_2" class="image"></div>
+
+                            <div class="paragraph">
+                                <h3>What to bring</h3>
+                                <p>
+                                    A day pack with your lunch, water bottle, sun hat, a warm jumper and rain jacket if the weather forecast is bad, togs and a towel. Please wear appropriate sports clothes for climbing. No denim please or really baggy trousers, you need to see where your feet are stepping! Any medication required.
+                                </p>
+                            </div>
+
+                            <div data-src="outdoor_1" class="image"></div>
 
                             <div class="paragraph">
                                 <h3>What's happening</h3>
                                 <p>
-                                    A private bus will drop students at the start of the Rangituhi walkway. Teachers will help students navigate the path to the lookout and then up to the summit of Rangituhi. From here, students will traverse the tops and then pop down into Te Ngahere o Tawa. Students will spend more time on the walk learning about reading maps, trees and leaves, local places of interest from viewpoints etc. There is also a $50 Prezzy Card as a prize for activities students can complete on the way.
+                                    We will meet at Tawa train station, where the roll will be taken. Please gather with your Mauri Tau for the roll and if you are running late, you must find a teacher and let them know you have arrived. We will catch the 8:48am train to Porirua and then walk as a group to Adrenalin Forest. 
+                                    <br><br>
+                                    If your whānau lives in Porirua and your child will meet us at Adrenalin Forest, please wait at the entrance to Adrenalin Forest and let a teacher know when the group gets there so we can update the roll and let the school know you are in our care.
+                                    <br><br>
+                                    After a safety briefing, students will have 3 hours to climb and test themselves. After having some lunch we will leave Adrenalin Forest and walk to Te Rauparaha Arena, where students have use of the whole of the main pool, spas, sauna, steam room, hydroslide and deep water swimming lane. If your child is not swimming there is an outside area off the side of the main pool where they can relax.
+                                    <br><br>
+                                    If you indicated on the permission form that your child can leave by themselves directly from the pool as they live in the local area, they will be dismissed from here at around 2:15pm.
+                                    <br><br>
+                                    The rest of the group will walk back to Porirua station and catch the 2:39pm train back to Tawa Station, where they will be dismissed.
+                                    <br><br>
+                                    Please note that there are no changes on the day about where your child can be dismissed from. We will go with the information you have provided on the permission form only. If you have changed your mind since filling in the permission form, please email me so I can adjust on our notes. 
                                 </p>
                             </div>
 
-                            <!-- This perm-img stays on both mobile and desktop -->
-                            <div data-src="outdoor_6" class="image perm-img"></div>
-                            <div data-src="outdoor_5" class="image"></div>
+                            <div data-src="outdoor_3" class="image"></div>
 
                         </section>
-                        <section class="right">
-                            <div data-src="outdoor_4" class="image"></div>
-                            <div data-src="outdoor_5" class="image"></div>
+                        <section id="right">
+                            <div data-src="outdoor_1" class="image"></div>
+                            <div data-src="outdoor_2" class="image"></div>
+                            <div data-src="outdoor_3" class="image"></div>
                         </section>
-                    </div>
                 </article>
             </main>
 
-            <!-- This is the footer of the website, that is the same on all pages, containing copyright and some external links -->
+            <!-- This is the footer of the website, that is the same on all pages. I have made heavy use of the &nbsp; (non-breaking space) character here, which means the footer resizes responsively without cutting words in awkward places. -->
             <footer>
                 <a id="footer-logo" href="index.html">
                     <img src="images/TC_logo.png" alt="">
-                    <!-- The &nbsp; (non-breaking space) character here means the footer resizes responsively without cutting words in awkward places -->
+                    <!-- The &nbsp; (non-breaking space) character here means the footer resizes responsively without cutting words in awkward places. -->
                     <p>Tawa&nbsp;College EOTC&nbsp;Week</p>
                 </a>
                 <div id="attribution">
                     <p>&copy; Reuben Humphrey 2025</p>
-                    <p>Text supplied by Tawa College</p>
+                    <p>Text supplied by Ria Edmonds - EOTC Coordinator</p>
                 </div>
                 <div id="external-links">
                     <a href="https://www.tawacollege.school.nz/">
