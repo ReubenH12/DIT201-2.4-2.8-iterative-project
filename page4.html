@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Meta tags to help search engine SEO -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="Keywords" content="EOTC Week, Tawa College, Camp">
         <meta name="Author" content="Reuben Humphrey">
-        <title>Tawa College EOTC Week - Community Service</title>
+        <title>Tawa College EOTC Week - Wainuiomata Camp</title>
         <link rel="icon" href="images/logo.png">
         <link rel="stylesheet" href="css/style.css">
         <script src="js/script.js" defer></script>
-        <!-- The "defer" attribute stops the JavaScript from loading until the entire HTML has loaded, which prevents issues with things firing too early. -->
     </head>
-    <!-- The ID in the body lets the JavaScript know what page it's on -->
     <body id="community" class="activity">
-        <!-- The whole website is contained in a wrapper with display: grid; to lay out the website -->
         <div id="grid-container">
 
-            <!-- The nav section is at the top of each page and contains a logo and links. Using the semantic tag aligns with best practices for HTML5 -->
             <nav>
                 <div id="links-background">
                     <a href="index.html">
@@ -27,64 +22,47 @@
                         </div>
                     </a>
 
-                    <!-- This div for the hamburger menu when the screen is small enough -->
                     <div id="hamburger">
                         <div id="bar1" class="bar"></div>
                         <div id="bar2" class="bar"></div>
                         <div id="bar3" class="bar"></div>
                     </div>
 
-                    <!-- This div is for the links to other pages. On small screens, it is hidden until opened. -->
                     <div id="menu">
                         <p>Menu</p>
                         <ul id="page-links">
-                            <li>
-                                <a href="index.html">
-                                    <p>Home</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="page2.html">
-                                    <p>Wainuiomata Camp</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="page3.html">
-                                    <p>Outdoor Activities</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="page4.html">
-                                    <p>Community Service</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="page5.html">
-                                    <p>Contact</p>
-                                </a>
-                            </li>
+                            <a href="index.html">
+                                <li><p>Home</p></li>
+                            </a>
+                            <a href="page2.html">
+                                <li><p>Wainuiomata Camp</p></li>
+                            </a>
+                            <a href="page3.html">
+                                <li><p>Adrenalin Forest and Pool</p></li>
+                            </a>
+                            <a href="page4.html">
+                                <li><p>Community Service</p></li>
+                            </a>
+                            <a href="page5.html">
+                                <li><p>Contact</p></li>
+                            </a>
                         </ul>
                     </div>
                 </div>
                 <div class="accent-line"></div>
             </nav>
 
-            <!-- The main section is beneath the header and houses the content. Once again I have used semantic tags as best practice. -->
             <main>
-                <!-- The article is here to match the other pages, as some pages have two seperate articles within them -->
                 <article>
                     <div class="activity-header">
                         <h1>Community Service</h1>
                     </div>
-                    <!-- This wrapper div just just makes the two columns of the page display next to each other-->
                     <div class="row-content">
-                        <!-- This section is the text column -->
-                        <section class="left">
+                        <section id="left">
 
-                            <div class="meeting-time-location koru-background">
-                                <div class="symbols">
+                            <div id="meeting-time-location" class="koru-background">
+                                <div id="symbols">
                                     <div class="symbol">
-                                        <!-- Like all the SVGs in the website, this one is inline which makes it easier to manage and style with CSS -->
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                             <circle cx="12" cy="12" r="10"></circle>
                                             <polyline points="12 6 12 12 16 14"></polyline>
@@ -96,7 +74,7 @@
                                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                             <circle cx="12" cy="10" r="3"></circle>
                                         </svg>
-                                        <h5>School Gym</h5>
+                                        <h5>School Hall</h5>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +84,6 @@
                                 </p>
                             </div>
 
-                            <!-- This image, like the others in this section, only shows on phones (Test 33). The data-src attribute is explained in the W2T3 diary entry. -->
                             <div data-src="community_1" class="image"></div>
 
                             <div class="paragraph">
@@ -121,17 +98,15 @@
                             <div class="paragraph">
                                 <h3>What's happening</h3>
                                 <p>
-                                    Students will spend a day completing community service in a small group with friends in the Tawa basin, supervised by a staff member. This is a highly valuable experience where students have the chance to interact with the elderly helping them with gardening, painting, etc. or assisting local food banks, kindergartens, hospice shops and charities for the day. Students will usually walk to their allocated job with a staff member, however a very small number of jobs will be on the fringes of the Tawa Basin, and therefore they may be driven by a staff member in their groups.
+                                    Students will spend a day completing community service in a small group with their friends in the Tawa basin, supervised by a staff member. This is a highly valuable experience where students have the chance to interact with the elderly helping them with gardening, painting etc or assisting local food banks, kindergartens, hospice shops and charities for the day. Old clothes are advised here as you may get mud or paint on them! Students will usually walk to their allocated job with a staff member, however a very small number of jobs will be on the fringes of the Tawa Basin and therefore they may be driven by a staff member in their groups. 
                                 </p>
                             </div>
 
-                            <!-- This perm-img stays on both mobile and desktop -->
                             <div data-src="community_4" class="image perm-img"></div>
                             <div data-src="community_3" class="image"></div>
 
                         </section>
-                        <!-- This right section is the images, and only shows on desktop -->
-                        <section class="right">
+                        <section id="right">
                             <div data-src="community_1" class="image"></div>
                             <div data-src="community_2" class="image"></div>
                             <div data-src="community_3" class="image"></div>
@@ -140,16 +115,16 @@
                 </article>
             </main>
 
-            <!-- This is the footer of the website, that is the same on all pages, containing copyright and some external links -->
+            <!-- This is the footer of the website, that is the same on all pages. I have made heavy use of the &nbsp; (non-breaking space) character here, which means the footer resizes responsively without cutting words in awkward places. -->
             <footer>
                 <a id="footer-logo" href="index.html">
                     <img src="images/TC_logo.png" alt="">
-                    <!-- The &nbsp; (non-breaking space) character here means the footer resizes responsively without cutting words in awkward places -->
+                    <!-- The &nbsp; (non-breaking space) character here means the footer resizes responsively without cutting words in awkward places. -->
                     <p>Tawa&nbsp;College EOTC&nbsp;Week</p>
                 </a>
                 <div id="attribution">
                     <p>&copy; Reuben Humphrey 2025</p>
-                    <p>Text supplied by Tawa College</p>
+                    <p>Text supplied by Ria Edmonds - EOTC Coordinator</p>
                 </div>
                 <div id="external-links">
                     <a href="https://www.tawacollege.school.nz/">

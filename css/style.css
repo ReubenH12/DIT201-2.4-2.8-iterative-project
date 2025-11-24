@@ -17,7 +17,6 @@
 	interpolate-size: allow-keywords;
 }
 
-/* Main website wrapper */
 #grid-container {
 	overflow-x: hidden; 
 	display: grid;
@@ -25,17 +24,14 @@
 	height: 100%;
 }
 
-/* This makes the layout slightly different on the home page. The calc(100vh - 136px) makes sure the height of the header and therefore the hero image is exactly the same height as the screen. */
+/* The calc(100vh - 136px) makes sure the height of the header and therefore the hero image is exactly the same height as the screen */
 #home #grid-container {
 	grid-template-rows: 136px calc(100vh - 136px) auto auto;
 }
 
-/* Activity page grid layout */
 .activity #grid-container {
 	grid-template-rows: 136px auto auto;
 }
-
-/* The following section is the styling for the navigation bar */
 
 nav #links-background {
     background-color: var(--blue);
@@ -73,18 +69,12 @@ nav ul {
 }
 
 nav ul li {
-	width: auto;
-}
-
-nav li > a {
 	font-size: 25px;
 	color: white;
 	font-weight: 400;
-	width: 100%;
-	height: 100%;
+	width: auto;
 	padding-left: 27px;
 	padding-right: 28px;
-	display: inline-block;
 }
 
 nav a {
@@ -103,7 +93,6 @@ nav .accent-line {
 	height: 12px;
 }
 
-/* Hides hamburger menu by default on desktops */
 nav #hamburger {
 	display: none;
 }
@@ -112,10 +101,8 @@ nav #menu > p {
 	display: none;
 }
 
-/* These are the media queries for the navigation section, to make it responsive */
-
 @media screen and (max-width: 1600px) {
-	nav ul li a {
+	nav ul li {
 		font-size: 20px;
 		padding-left: 17px;
 		padding-right: 18px;
@@ -123,13 +110,13 @@ nav #menu > p {
 }
 
 @media screen and (max-width: 1260px) {
-	nav ul li a {
+	nav ul li {
 		padding-left: 12px;
 		padding-right: 13px;
 	}
 }
 
-/* This media query adds all the styling to change into a hamburger menu */
+
 @media screen and (max-width: 1200px) {
 	nav #hamburger {
 		display: block;
@@ -168,8 +155,6 @@ nav #menu > p {
 		display: block;
 	}
 
-	/* The following three rulesets make the hamburger turn nicely into a close button */
-
 	#hamburger:has(~ #menu.opened) #bar1 {
 		transform: translate(0, 16px) rotate(-45deg);
 	}
@@ -195,11 +180,11 @@ nav #menu > p {
 		margin: 20px 0 15px;
 	}
 
-	#menu li a {
+	#menu li {
 		padding: 18px 50px;
 	}
 
-	#menu li a p {
+	#menu li p {
 		width: fit-content;
 	}
 }
@@ -231,10 +216,6 @@ nav #menu > p {
 	}
 }
 
-/* End of navigation styling */
-
-/* The following section is the styling for the header */
-
 #home header {
 	display: flex;
 	flex-direction: column;
@@ -263,11 +244,8 @@ nav #menu > p {
 	z-index: -1;
 	position: absolute;
 	filter: blur(4px) brightness(0.8);
-	/* The scale here is needed to make the blurred edges of the header image not be visible, as they mix with the white behind and it looks bad*/
 	scale: 1.013;
 }
-
-/* Following are media queries for header, generally making it smaller as the screen gets smaller */
 
 @media screen and (max-width: 1600px) {
 	#home header h1 {
@@ -287,7 +265,6 @@ nav #menu > p {
 	#home header .background {
 		height: 500px;
 		filter: blur(3px) brightness(0.8);
-		/* As the image size and blur level is adjusted, the scale also needs to be */
 		scale: 1.035;
 	}
 }
@@ -360,7 +337,7 @@ nav #menu > p {
 }
 
 @media screen and (max-width: 400px) {
-	#home .left > p {
+	#home #left > p {
 		font-size: 15px;
 	}
 
@@ -425,10 +402,6 @@ nav #menu > p {
 	}
 }
 
-/* End of overall header styling */
-
-/* The following is the styling for the scroll nudge */
-
 #scroll-nudge {
 	position: absolute;
 	bottom: 0px;
@@ -447,7 +420,7 @@ nav #menu > p {
 	font-size: 15px
 }
 
-/* This makes the nudge text show permanently for devices that don't have the ability to hover, or devices that have a "course" input, i.e. phones (test 32) */
+/* This makes the nudge text show permanently for devices that don't have the ability to hover, or devices that have a "course" input, i.e. phones */
 @media (hover: none) or (pointer: coarse) {
 	#nudge-text {
 		display: block;
@@ -491,11 +464,6 @@ nav #menu > p {
 	}
 }
 
-/* End of scroll nudge styling */
-
-/* The following is for the main section of each page */
-
-/* This sets the layout and gap of the articles, which on most pages is only one. On Page 3 this sets the gap between the Pool and Rangituhi articles. */
 main {
 	display: flex;
 	flex-direction: column;
@@ -504,21 +472,16 @@ main {
 	padding: 140px 0;
 }
 
-/* The border seperating the hero image from the main content */
 #home main {
 	border-top: 18px solid var(--blue);
 }
 
-/* The gap here now sets the gap between the article header (e.g. Waninuiomata Camp) and the row-content with the actual content */
 article {
 	display: flex;
 	flex-direction: column;
 	gap: 120px;
-	/* The width is always three quarters of the available screen width */
 	width: 75vw;
 }
-
-/* The following are the media queries for the very broad layout of each page */
 
 @media screen and (max-width: 1300px) {
 	main {
@@ -548,33 +511,28 @@ article {
 	}
 }
 
-/* This is the div that sets up the two columns on each page, with a constant 13% gap */
 .row-content {
 	display: flex;
 	flex-direction: row;
 	gap: 13%;
 }
 
-/* The section is the left and right columns */
 article section {
 	display: flex;
 	flex-direction: column;
 }
 
-/* Text column; always half the available width */
-.left {
+#left {
 	width: 50%;
 	gap: 70px;
 	font-size: 18px;
 }
 
-/* Image column - 13% + 50% + 37% = 100% */
-.right {
+#right {
 	width: 37%;
 	gap: 85px;
 }
 
-/* All the standard images on the website have the same styling */
 .image {
 	width: 100%;
 	background-size: cover;
@@ -582,17 +540,13 @@ article section {
 	border: 11px solid var(--brown);
 }
 
-/* The .images in the left column are hidden by default as they only show on mobile... */
-.left .image {
+#left .image {
 	display: none;
 }
 
-/* ...except for ones with the perm-img class that are always shown */
-.left .image.perm-img {
+#left .image.perm-img {
 	display: block;
 }
-
-/* The following are the media queries for the finer details of the the layout */
 
 @media screen and (max-width: 1550px) {
 	article {
@@ -603,23 +557,22 @@ article section {
 		gap: 8%;
 	}
 
-	.right {
+	#right {
 		width: 42%;
 	}
 }
 
-/* The 1000px breakpoint is important as this is where the layout changed from two columns to one */
 @media screen and (max-width: 1000px) {
 	article {
 		width: 70vw;
 	}
 
-	.left {
+	#left {
 		width: 100%;
 		gap: 60px;
 	}
 
-	.right {
+	#right {
 		display: none;
 	}
 
@@ -627,7 +580,7 @@ article section {
 		flex-direction: column;
 	}
 
-	.left .image {
+	#left .image {
 		display: block;
 		height: 350px;
 	}
@@ -645,7 +598,7 @@ article section {
 		gap: 45px;
 	}
 
-	.left {
+	#left {
 		gap: 45px;
 	}
 }
@@ -660,14 +613,10 @@ article section {
 	}
 }
 
-/* End of overall general <main> stlying */
-
 /* This covers all the divs that need the same border radius. Doing it this way makes it easy to change the radius all at once */
 article section > div, article > #row-content > div, #form-box, #contact-details, #contact .image {
 	border-radius: 35px;
 }
-
-/* The following three rulesets set up the brown koru background, which works automatically with only a class added to the box that I want to have the pattern. Everything else is managed by the CSS.  */
 
 .koru-background {
 	background-color: #460408;
@@ -689,13 +638,11 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	border-radius: inherit;
 }
 
-/* This is needed to make the elements show in front of the koru */
 .koru-background > * {
 	position: relative;
 }
 
-/* Using classes for some font weights means I can quickly add class="bold" or class="semi-bold" to text that needs it, rather than manaully writing the font weight in CSS everywhere text like that appears */
-
+/* Using classes for this means I can quickly add class="bold" or class="semi-bold" to text that needs it, rather than manaully writing the font weight in CSS everywhere text like that appears */
 .bold {
 	font-weight: 700;
 }
@@ -704,13 +651,11 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	font-weight: 600;
 }
 
-/* The following is the styling for the group links box on the home page */
-
 #group-links {
 	padding: 27px;
 }
 
-#group-links p {
+#group-links > p {
 	color: white;
 	font-size: 16px;
 }
@@ -719,26 +664,31 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	margin-top: 27px;
 	display: flex;
 	justify-content: space-between;
+	flex-direction: column;
+	gap: 30px;
 }
-
-/* Putting the buttons into two .button-pairs means that when the screen gets too narrow it will wrap to be a 2x2 grid instead of 1 on the second row */
 
 #group-links .button-pair {
 	display: flex;
 	justify-content: space-between;
-	width: 48%;
+	width: 100%;
 }
 
 #group-links .group-button {
 	border-radius: 43px;
 	background-color: var(--yellow);
-	width: 46%;
-	height: 45px;
-	transition-duration: 100ms;
+	width: 48%;
+	padding: 10px;
 }
 
-#group-links .group-button:hover {
-	scale: 1.03;
+#group-links .group-button h5 {
+	font-size: 20px;
+	text-align: center;
+	margin-top: 18px;
+}
+
+#group-links .group-button p {
+	margin: 20px 10px;
 }
 
 #group-links a {
@@ -751,15 +701,13 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	color: initial;
 }
 
-/* The following are the group links media queries */
-
 @media screen and (max-width: 1100px) and (min-width: 1000px) {
-	#group-links a {
+	#group-links p {
 		font-size: 16px;
 	}
 }
 
-@media screen and (max-width: 560px) {
+/* @media screen and (max-width: 560px) {
 	#group-links #buttons {
 		flex-direction: column;
 		gap: 25px;
@@ -768,23 +716,36 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	#group-links .button-pair {
 		width: 100%;
 	}
+} */
+
+@media screen and (max-width: 1400px) {
+	#group-links {
+		padding: 27px 70px;
+	}
+
+	#group-links .button-pair {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	#group-links .group-button {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#group-links {
+		padding: 27px;
+	}
 }
 
 @media screen and (max-width: 400px) {
 	#group-links p {
 		font-size: 14px;
 	}
-
-	#group-links a {
-		font-size: 16px;
-	}
 }
 
-/* End of group links styling */
-
-/* The following is the styling for the meeting time and location boxes on the activity pages */
-
-.meeting-time-location {
+#meeting-time-location {
 	display: flex;
 	flex-direction: column;
 	color: white;
@@ -793,29 +754,29 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	text-align: center;
 }
 
-.meeting-time-location .symbols {
+#meeting-time-location #symbols {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
-.meeting-time-location h5 {
+#meeting-time-location h5 {
 	font-size: 30px;
 	font-weight: 500;
 }
 
-.meeting-time-location p {
+#meeting-time-location p {
 	font-size: 21px;
 }
 
-.meeting-time-location .symbol {
+#meeting-time-location .symbol {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: 22px;
 }
 
-.meeting-time-location svg {
+#meeting-time-location svg {
 	width: 80px;
 	height: 80px;
 	fill: none;
@@ -825,65 +786,57 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	stroke-linejoin: round;
 }
 
-/* The following are the media queries for the meeting time and location boxes */
-
-/* Changes it to have time on top of location instead of adjacent */
 @media screen and (max-width: 1300px) {
-	.meeting-time-location .symbols {
+	#meeting-time-location #symbols {
 		flex-direction: column;
 		gap: 30px;
 	}
 }
 
-/* The box gets wider again when the general layout switches to one column, so the MTAL box goes to adjacent again */
 @media screen and (max-width: 1000px) {
-	.meeting-time-location .symbols {
+	#meeting-time-location #symbols {
 		flex-direction: row;
 		gap: 0;
 	}
 }
 
 @media screen and (max-width: 650px) {
-	.meeting-time-location .symbols {
+	#meeting-time-location #symbols {
 		flex-direction: column;
 		gap: 30px;
 	}
 
-	.meeting-time-location svg {
+	#meeting-time-location svg {
 		width: 60px;
 		height: 60px;
 	}
 }
 
 @media screen and (max-width: 550px) {
-	.meeting-time-location svg {
+	#meeting-time-location svg {
 		width: 40px;
 		height: 40px;
 	}
 
-	.meeting-time-location h5 {
+	#meeting-time-location h5 {
 		font-size: 22px;
 	}
 
-	.meeting-time-location p {
+	#meeting-time-location p {
 		font-size: 16px;
 	}
 }
 
 @media screen and (max-width: 400px) {
-	.meeting-time-location {
+	#meeting-time-location {
 		padding: 30px 23px;
 		gap: 35px;
 	}
 
-	.meeting-time-location p {
+	#meeting-time-location p {
 		font-size: 13px;
 	}
 }
-
-/* End of MTAL box styling */
-
-/* The following is the styling for the Wainui Preview button on the home page */
 
 #wainui-preview {
 	background-image: url(../images/wainui_8.jpg);
@@ -892,6 +845,7 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	height: 259px;
 	transition: scale 200ms;
 	border: 7px solid var(--brown);
+	padding: 39px 20px;
 }
 
 #wainui-preview:hover {
@@ -903,7 +857,6 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	height: 100%;
 	display: inline-block;
 	text-decoration: none;
-	padding: 39px 20px;
 }
 
 #wainui-preview h4 {
@@ -925,9 +878,6 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	}
 }
 
-/* End of Wainui Preview styling */
-
-/* The .paragraph class is the paragraps with a small heading on the activity pages, and a flexbox makes setting the gap between very easy */
 .paragraph {
 	display: flex;
 	flex-direction: column;
@@ -940,15 +890,14 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	font-weight: 600;
 }
 
-/* All the standard images in the left column should be 350px (on desktop) */
-.left .image {
+#left .image {
 	height: 350px;
 }
 
-/* This makes the images on the right fill the available space; see Test 4 */
-.right .image {
+#right .image {
 	flex-grow: 1;
 }
+
 
 @media screen and (max-width: 400px) {
 	.paragraph {
@@ -960,14 +909,11 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 		font-size: 37px;
 	}
 
-	.left .image {
+	#left .image {
 		height: 250px;
 	}
 }
 
-/* The following is the styling for the .row-content stuff on the contact page */
-
-/* This is the equivalent of the .left section, but as it's just one box it's different here */
 #contact-details {
 	display: flex;
 	flex-direction: column;
@@ -999,12 +945,9 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	font-weight: 500;
 }
 
-/* This is the equivalent of the .right section */
 #contact .image {
 	width: 37%;
 }
-
-/* The following are the media queries to make the main part of the contact page responsive */
 
 @media screen and (max-width: 1800px) {
 	#contact-details p {
@@ -1019,6 +962,7 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 }
 
 @media screen and (max-width: 1300px) {
+
 	#contact-details svg {
 		width: 60px;
 		height: 60px;
@@ -1038,6 +982,7 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	#contact-details .detail {
 		gap: 30px;
 	}
+
 }
 
 @media screen and (max-width: 1000px) {
@@ -1116,10 +1061,6 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 		font-size: 13px;
 	}
 }
-
-/* End of .row-content contact page styling */
-
-/* The following is the styling for the box with the link to the Google Form on the contact page */
 
 #form-box {
 	width: 100%;
@@ -1209,10 +1150,6 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	}
 }
 
-/* End of form box styling */
-
-/* The following is the styling for the footer, consistent across all pages */
-
 footer {
 	background-color: var(--blue);
 	display: flex;
@@ -1277,12 +1214,15 @@ footer #external-links svg {
 }
 
 @media screen and (max-width: 1000px) and (min-width: 876px) {
+	/* footer #footer-logo {
+		width: 150px;
+	} */
+
 	footer p {
 		font-size: 17px;
 	}
 }
 
-/* When the screen is small enough the footer is displayed as a column instead of a row */
 @media screen and (max-width: 875px) {
 	footer {
 		flex-direction: column;
@@ -1315,4 +1255,6 @@ footer #external-links svg {
 	}
 }
 
-/* End of footer styling */
+.done {
+	background-color: lime;
+}
