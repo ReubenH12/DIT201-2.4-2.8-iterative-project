@@ -840,6 +840,17 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 
 #wainui-preview {
 	background-image: url(../images/wainui_8.jpg);
+}
+
+#forestpool-preview {
+	background-image: url(../images/outdoor_2.jpg);
+}
+
+#community-preview {
+	background-image: url(../images/community_2.jpg);
+}
+
+.page-preview {
 	background-position: center;
 	background-size: cover;
 	height: 259px;
@@ -848,18 +859,18 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 	padding: 39px 20px;
 }
 
-#wainui-preview:hover {
+.page-preview:hover {
 	scale: 1.03;
 }
 
-#wainui-preview a {
+.page-preview a {
 	width: 100%;
 	height: 100%;
 	display: inline-block;
 	text-decoration: none;
 }
 
-#wainui-preview h4 {
+.page-preview h4 {
 	font-weight: 750;
 	font-size: 44px;
 	text-align: center;
@@ -867,14 +878,20 @@ article section > div, article > #row-content > div, #form-box, #contact-details
 }
 
 @media screen and (max-width: 500px) {
-	#wainui-preview h4 {
+	.page-preview h4 {
 		font-size: 35px;
 	}
 }
 
 @media screen and (max-width: 359px) {
-	#wainui-preview {
+	.page-preview {
 		padding-top: 50px;
+	}
+}
+
+@media screen and (max-width: 310px) {
+	.page-preview h4 {
+		font-size: 30px;
 	}
 }
 
